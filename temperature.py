@@ -1,5 +1,5 @@
 def check_temperature(tmp):
-    if tmp <= 30:
+    if tmp < 30:
         return "NORMAL"
     else:
         return "ALERT"
