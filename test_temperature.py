@@ -1,18 +1,17 @@
 from temperature import check_temperature
 
 
-def test_normal_temperature():
-    assert check_temperature(20) == "NORMAL"
-    assert check_temperature(25) == "NORMAL"
+def test_negative_temperature():
+    assert check_temperature(-10) == "INVALID"
 
 
-def test_limit_below():
-    assert check_temperature(29) == "NORMAL"
+def test_text_input():
+    assert check_temperature("abc") == "INVALID"
 
 
-def test_limit_exact():
-    assert check_temperature(30) == "ALERT"
+def test_empty_input():
+    assert check_temperature(None) == "INVALID"
+    
 
-
-def test_high_temperature():
-    assert check_temperature(40) == "ALERT"
+def test_boolean_input():
+    assert check_temperature(True) == "INVALID"

@@ -1,10 +1,17 @@
 def check_temperature(tmp):
+
+
+    if not isinstance(tmp, (int, float)) or isinstance(tmp, bool):
+        return "INVALID"
+
+    if tmp < 0:
+        return "INVALID"
+
     if tmp < 30:
         return "NORMAL"
+
+    elif tmp < 60:
+        return "WARNING"
+
     else:
         return "ALERT"
-
-
-if __name__ == "__main__":
-    print("Test 25°C :", check_temperature(25))
-    print("Test 35°C :", check_temperature(35))
