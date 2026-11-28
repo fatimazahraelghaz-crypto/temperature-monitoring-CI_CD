@@ -19,4 +19,4 @@ def test_60():
     assert check_temperature(60) == "ALERT"
 
 def test_conversion():
-    assert convert_to_fahrenheit(0) ==32
+    assert convert_to_fahrenheit(0) == 32
